@@ -1,7 +1,7 @@
 
 # 💻 Web Development Projects – ApexPlanet Internship
 
-This repository showcases the work completed as part of a 2-task internship program provided by **ApexPlanet Software Pvt. Ltd**, designed to enhance foundational and intermediate-level web development skills using **HTML**, **CSS**, and **JavaScript**.
+This repository showcases the work completed as part of a 2-task internship program provided by **ApexPlanet Software Pvt. Ltd**, designed to enhance foundational and intermediate-level web development skills using **[HTML]**, **[CSS]**, and **[JavaScript]**.
 
 ---
 
@@ -96,10 +96,10 @@ A dynamic, interactive web app combining layout principles, input handling, vali
 
 ## 👨‍💻 Author
 
-SHAIK JOHNNY
+**[SHAIK JOHNNY]**
 Intern at ApexPlanet Software Pvt. Ltd  
-GitHub: https://github.com/JOHNNY-SHAIK/Apex_internship.git  
-LinkedIn: https://www.linkedin.com/in/shaik-johnny-85507b350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+GitHub: [https://github.com/JOHNNY-SHAIK/Apex_internship.git]  
+LinkedIn: [https://www.linkedin.com/in/shaik-johnny-85507b350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app]
 
 ---
 
