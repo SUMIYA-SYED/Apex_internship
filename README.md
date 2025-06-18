@@ -96,10 +96,10 @@ A dynamic, interactive web app combining layout principles, input handling, vali
 
 ## 👨‍💻 Author
 
-**[SHAIK JOHNNY]**
+**[SYED SUMIYA]**
 Intern at ApexPlanet Software Pvt. Ltd  
-GitHub: [https://github.com/JOHNNY-SHAIK/Apex_internship.git]  
-LinkedIn: [https://www.linkedin.com/in/shaik-johnny-85507b350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app]
+GitHub: [https://github.com/SUMIYA-SYED/Apex_internship.git]  
+LinkedIn: [https://www.linkedin.com/in/syed-sumiya-10567936a/]
 
 ---
 
