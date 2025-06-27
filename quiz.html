@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beginner Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #f0faff, #e6ffee);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .quiz-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00796b;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .options div {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .options div:hover {
+      background-color: #e0f2f1;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #00796b;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #004d40;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>Basic Web Quiz</h2>
+    <div class="question" id="question">Loading question...</div>
+    <div class="options" id="options"></div>
+    <button onclick="nextQuestion()">Next</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What does HTML stand for?",
+        options: ["HighText Machine Language", "HyperText Markup Language", "HyperText Machine Language", "None of these"],
+        answer: "HyperText Markup Language"
+      },
+      {
+        question: "What is the correct tag for a paragraph in HTML?",
+        options: ["<p>", "<para>", "<text>", "<paragraph>"],
+        answer: "<p>"
+      },
+      {
+        question: "Which of these is a color in CSS?",
+        options: ["banana", "yellow", "circle", "margin"],
+        answer: "yellow"
+      },
+      {
+        question: "Which symbol is used to start a comment in HTML?",
+        options: ["//", "##", "<!--", "-->"],
+        answer: "<!--"
+      },
+      {
+        question: "Which one is a web browser?",
+        options: ["Chrome", "Java", "Notepad", "HTML"],
+        answer: "Chrome"
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = quizData[current];
+      document.getElementById("question").textContent = q.question;
+
+      const optionsHTML = q.options.map(opt =>
+        `<div><label><input type="radio" name="option" value="${opt}"> ${opt}</label></div>`
+      ).join("");
+      document.getElementById("options").innerHTML = optionsHTML;
+    }
+
+    function nextQuestion() {
+      const selected = document.querySelector('input[name="option"]:checked');
+      if (selected && selected.value === quizData[current].answer) {
+        score++;
+      }
+
+      current++;
+      if (current < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("question").textContent = "Quiz Completed!";
+        document.getElementById("options").innerHTML = "";
+        document.getElementById("result").textContent = `Your Score: ${score} / ${quizData.length}`;
+      }
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
