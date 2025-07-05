@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Listing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+    header {
+      background-color: #0d6efd;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .controls {
+      margin: 2rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .product-card {
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      background-color: #ffffff;
+      transition: transform 0.2s ease-in-out;
+    }
+    .product-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .product-card img {
+      max-height: 150px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+    #loader {
+      display: none;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #e9ecef;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="display-5">Product Listing</h1>
+    <p class="lead">Browse and add items to your cart</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Controls -->
+    <div class="controls">
+      <input type="text" id="searchInput" class="form-control w-25" placeholder="Search products..." />
+      <select id="categoryFilter" class="form-select w-auto">
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+      </select>
+      <select id="sortBy" class="form-select w-auto">
+        <option value="default">Sort By</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+      </select>
+      <button id="viewCart" class="btn btn-primary">🛒 View Cart (<span id="cartCount">0</span>)</button>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productList" class="row g-4"></div>
+  </div>
+
+  <footer>
+    &copy; 2025 SHAIK JOHNNY. All rights reserved.
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const productList = document.getElementById('productList');
+    const loader = document.getElementById('loader');
+    const cartCount = document.getElementById('cartCount');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCartDisplay() {
+      cartCount.textContent = cart.length;
+    }
+
+    function showLoader(show = true) {
+      loader.style.display = show ? 'block' : 'none';
+    }
+
+    function createProductCard(product) {
+      return `
+        <div class="col-md-4">
+          <div class="product-card h-100 text-center">
+            <img src="${product.image}" alt="${product.title}" class="img-fluid" />
+            <h5>${product.title}</h5>
+            <p class="text-muted">$${product.price}</p>
+            <button class="btn btn-sm btn-success" onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderProducts(products) {
+      productList.innerHTML = products.map(p => createProductCard(p)).join('');
+    }
+
+    function addToCart(product) {
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartDisplay();
+    }
+
+    function fetchProducts() {
+      showLoader(true);
+      setTimeout(() => {
+        const products = [
+          { title: 'Laptop', price: 1200, category: 'electronics', image: 'https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D' },
+          { title: 'Sneakers', price: 99, category: 'fashion', image: 'https://m.media-amazon.com/images/I/71RIbnXYnjL._UY300_.jpg' },
+          { title: 'Smartphone', price: 799, category: 'electronics', image: 'https://static.toiimg.com/thumb/resizemode-4,msid-110181052,imgsize-400,width-143/110181052.jpg' },
+          { title: 'T-Shirt', price: 25, category: 'fashion', image: 'https://nobero.com/cdn/shop/files/og.jpg?v=1744007258' },
+        ];
+        showLoader(false);
+        renderProducts(products);
+        window.products = products; // for filter/sort
+      }, 1000);
+    }
+
+    // Filter, Sort, Search
+    document.getElementById('searchInput').addEventListener('input', filterAndRender);
+    document.getElementById('categoryFilter').addEventListener('change', filterAndRender);
+    document.getElementById('sortBy').addEventListener('change', filterAndRender);
+
+    function filterAndRender() {
+      let filtered = [...window.products];
+      const category = document.getElementById('categoryFilter').value;
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const sort = document.getElementById('sortBy').value;
+
+      if (category !== 'all') {
+        filtered = filtered.filter(p => p.category === category);
+      }
+
+      if (searchTerm) {
+        filtered = filtered.filter(p => p.title.toLowerCase().includes(searchTerm));
+      }
+
+      if (sort === 'price-asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sort === 'price-desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      }
+
+      renderProducts(filtered);
+    }
+
+    // Initial Load
+    fetchProducts();
+    updateCartDisplay();
+  </script>
+</body>
+</html>
