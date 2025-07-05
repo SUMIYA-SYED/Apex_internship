@@ -1,108 +1,79 @@
+---
 
-# 💻 Web Development Projects – ApexPlanet Internship
+# 💻 ApexPlanet Web Development Internship
 
-This repository showcases the work completed as part of a 2-task internship program provided by **ApexPlanet Software Pvt. Ltd**, designed to enhance foundational and intermediate-level web development skills using **[HTML]**, **[CSS]**, and **[JavaScript]**.
+Completed a structured internship program by *ApexPlanet Software Pvt. Ltd, focused on building responsive, interactive web projects using **HTML, **CSS, and **JavaScript*.
 
 ---
 
-## 📅 Timeline
-**Duration**: 18 Days  
-**Tasks Completed**: 2  
-**Technologies Used**: HTML5, CSS3, JavaScript
+## 📅 Duration
+
+*36 Days*
+*Tasks Completed*: 4
+*Technologies*: HTML5, CSS3, JavaScript, APIs, Local Storage
 
 ---
 
-## ✅ Task 1 – Basics of Web Development
+## ✅ Task Highlights
 
-### 🔹 Objective:
-To understand and apply foundational concepts of web development using HTML, CSS, and JavaScript.
+### 🔹 Task 1: Web Development Fundamentals
 
-### 📌 Steps Completed:
-1. **Create a Simple Webpage Using HTML**  
-   - Implemented basic webpage structure with headings, paragraphs, links, and images.
-   - Focused on proper semantic HTML usage.
+* Built a static webpage using semantic HTML and CSS.
+* Added basic interactivity via JavaScript event handling.
+* Outcome: A simple, styled website with interactive features.
 
-2. **Style the Webpage Using CSS**  
-   - Applied colors, fonts, spacing, and layout formatting.
-   - Practiced inline, internal, and external CSS usage.
+### 🔹 Task 2: Intermediate Front-End Projects
 
-3. **Add Basic JavaScript for Interactivity**  
-   - Implemented button click alert using JavaScript.
-   - Learned DOM basics and `addEventListener`.
+* Created a styled contact form with validation.
+* Designed responsive layouts using Flexbox & Grid.
+* Built a dynamic to-do list with DOM updates.
+* Outcome: A responsive app combining layout, input validation, and JavaScript logic.
 
-### ✅ Outcome:
-A complete beginner-friendly static website with styled components and simple interactivity.
+### 🔹 Task 3: Advanced Styling & JavaScript
 
----
+* Applied media queries for full device responsiveness.
+* Developed an interactive quiz or image carousel.
+* Integrated real-time data from public APIs using fetch().
+* Outcome: Real-world project using APIs, interactivity, and responsive design.
 
-## ✅ Task 2 – Intermediate HTML, CSS, and JavaScript
+### 🔹 Task 4: Full Project Development
 
-### 🔹 Objective:
-Enhance front-end development skills by building structured and responsive web interfaces with form validation and DOM manipulation.
-
-### 📌 Steps Completed:
-1. **Create a Contact Form Using HTML and CSS**  
-   - Developed a clean, centered form UI with fields: name, email, phone, message.
-   - Applied modern CSS styling including padding, border-radius, and hover effects.
-
-2. **Add JavaScript Form Validation**  
-   - Validated required fields and correct email format before submission.
-   - Prevented form submission if validation fails.
-
-3. **Create a Responsive Layout Using Flexbox and CSS Grid**  
-   - Designed layouts that adapt to screen sizes using Flexbox/Grid.
-   - Incorporated media queries for full responsiveness across devices.
-
-4. **Develop a Dynamic To-Do List Using JavaScript**  
-   - Implemented task input, addition, and deletion functionality.
-   - Styled buttons with distinct colors (Add - Green, Remove - Red).
-   - Applied clean, responsive design and real-time DOM updates.
-
-### ✅ Outcome:
-A dynamic, interactive web app combining layout principles, input handling, validation, and JavaScript DOM skills.
+* Built a personal portfolio with multi-page layout.
+* Created a note-taking app with localStorage for data persistence.
+* Developed a product listing page with filtering and sorting.
+* Outcome: Complete front-end projects showcasing design, logic, and persistence.
 
 ---
 
 ## 📂 Project Structure
 
-```
+
 /project-root
-│
-├── task1/
-│   ├── index.html
-│   └── styles.css
-│
-├── task2/
-│   ├── contact-form.html
-│   ├── validation.js
-│   ├── responsive-layout.html
-│   ├── todo-list.html
-│   └── styles.css
-│
+├── task1/         → Basic webpage
+├── task2/         → Form, layout, to-do app
+├── task3/         → Media queries, quiz/carousel, API
+├── task4/         → Portfolio, note app, product filter
 └── README.md
-```
+
 
 ---
 
-## 🎯 Skills Gained
+## 🎯 Key Skills
 
-- Semantic HTML structuring
-- Modern CSS styling and responsive design
-- JavaScript fundamentals (events, DOM manipulation)
-- Form validation techniques
-- UI/UX improvement through visual feedback and layout optimization
+* Semantic HTML, CSS3, Flexbox & Grid
+* JavaScript DOM manipulation & event handling
+* Responsive design with media queries
+* API integration with Fetch
+* Local Storage usage for data persistence
+* Filtering, sorting, and UI logic design
 
 ---
 
 ## 👨‍💻 Author
 
-**[SYED SUMIYA]**
-Intern at ApexPlanet Software Pvt. Ltd  
-GitHub: [https://github.com/SUMIYA-SYED/Apex_internship.git]  
-LinkedIn: [https://www.linkedin.com/in/syed-sumiya-10567936a/]
+*Syed Sumiya*
+Intern at ApexPlanet Software Pvt. Ltd
+🔗 GitHub: [github.com/SUMIYA-SYED/Apex\_internship.git](https://github.com/SUMIYA-SYED/Apex_internship.git)
+🔗 LinkedIn: [linkedin.com/in/syed-sumiya-10567936a](https://www.linkedin.com/in/syed-sumiya-10567936a)
 
 ---
-
-## 📜 License
-
-This project is for educational purposes under the ApexPlanet Internship Program.
