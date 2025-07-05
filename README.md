@@ -73,7 +73,9 @@ Completed a structured internship program by *ApexPlanet Software Pvt. Ltd, focu
 
 *Syed Sumiya*
 Intern at ApexPlanet Software Pvt. Ltd
+
 🔗 GitHub: [github.com/SUMIYA-SYED/Apex\_internship.git](https://github.com/SUMIYA-SYED/Apex_internship.git)
+
 🔗 LinkedIn: [linkedin.com/in/syed-sumiya-10567936a](https://www.linkedin.com/in/syed-sumiya-10567936a)
 
 ---
