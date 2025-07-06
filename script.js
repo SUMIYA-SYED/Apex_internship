@@ -1,3 +1,3 @@
 function showMessage() {
-  alert("Hello! Welcome to Johnny's Portfolio.");
+  alert("Hello! Welcome to sumiya's Portfolio.");
 }
