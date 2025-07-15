@@ -64,10 +64,15 @@ This is my advanced, optimized, and professional web portfolio submitted as part
 
 /project-root
 ├── task1/         → Basic webpage
+
 ├── task2/         → Form, layout, to-do app
+
 ├── task3/         → Media queries, quiz/carousel, API
+
 ├── task4/         → Portfolio, note app, product filter
+
 ├── task5-portfolio/ → Final optimized portfolio with SEO, lazy load, dark mode, blog, testimonials, services, and performance enhancements
+
 └── README.md
 
 
