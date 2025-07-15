@@ -9,7 +9,9 @@ Completed a structured internship program by *ApexPlanet Software Pvt. Ltd, focu
 ## 📅 Duration
 
 *45 Days*
+
 *Tasks Completed*: 5
+
 *Technologies*: HTML5, CSS3, Bootstrap 5, JavaScript, Google Fonts, Fetch API, DOM Manipulation, Local Storage, Toasts, Responsive Design, Lazy Loading, SEO Meta Tags, Open Graph Tags, Dark Mode, Favicon, Cross-Browser Compatibility.
 
 ---
